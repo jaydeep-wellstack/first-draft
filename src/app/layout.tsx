@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Jaydeep | Portfolio",
   description: "A scrollytelling personal portfolio website",
+  icons: {
+    icon: "/main-logo-dark.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=creato-display@400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="/main-logo-dark.png" />
       </head>
       <body className={`${inter.variable} font-body antialiased overflow-x-hidden`}>
         <Navbar />
