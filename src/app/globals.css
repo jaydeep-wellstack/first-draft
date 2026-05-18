@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 18, 18, 18;
+  --font-heading: 'Creato Display', sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #121212;
+  font-family: var(--font-body), sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
+  }
+}
+
+/* Hide scrollbar for a cleaner scrollytelling experience while still allowing scroll */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reveal-heading .word {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.18);
+    transition: color 0.35s ease;
+    margin-right: 0.22em;
+  }
+  
+  .reveal-heading .word.lit {
+    color: #ffffff;
+  }
+  
+  .skills-track-wrap {
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+  
+  .row-ltr { animation: scrollLTR 80s linear infinite; }
+  .row-rtl { animation: scrollRTL 40s linear infinite; }
+  
+  .blog-card {
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+  }
+}
+
+@keyframes scrollLTR {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRTL {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
